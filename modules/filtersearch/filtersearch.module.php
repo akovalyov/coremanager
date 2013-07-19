@@ -318,7 +318,11 @@ class FilterSearch extends ProCoreApi
             if ($orderBy == 'orderprice') Tools::orderbyPrice($limitedResult, $orderWay);
 
             ob_start();
-            print $this->view('product-list', array('products' => Product::getProductsProperties($this->lang, $limitedResult)), $smarty, $this->name);
+            print $this->view('product-list', array(
+                'products' => Product::getProductsProperties($this->lang, $limitedResult),
+                'comparator_max_item' => (int)Configuration::get('PS_COMPARATOR_MAX_ITEM'),
+
+            ), $smarty, $this->name);
 
             $products = ob_get_clean();
             $filterCount = count($this->productAssocIds()) > 0 ? count($this->productAssocIds()) : count($this->productIds);
@@ -447,7 +451,7 @@ class FilterSearch extends ProCoreApi
             $i = 0;
 
             foreach ($_GET AS $type => $id) {
-                if (!in_array($type, $whitelist) && $type !='controller') {
+                if (!in_array($type, $whitelist) && $type != 'controller') {
                     $type = preg_replace('/_[0-9]+/', '', $type);
 
                     array_push($filter, array(
