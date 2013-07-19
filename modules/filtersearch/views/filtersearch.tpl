@@ -7,7 +7,7 @@
 {if $ranges OR $attributes OR $features OR $manufacturers}
 	{if $stylesheet}
 		<link rel="stylesheet" href="{$assets}filtersearch.css" type="text/css" media="screen" charset="utf-8" />
-		<link rel="stylesheet" href="{$coreAssets}themes/base/ui.all.css" type="text/css" media="screen" charset="utf-8" />
+		{*<link rel="stylesheet" href="{$coreAssets}themes/base/ui.all.css" type="text/css" media="screen" charset="utf-8" />*}
 		{literal}<!--[if IE]> 
 			<style type="text/css"> 
 				.filterSearchModule ul li, 
@@ -32,8 +32,6 @@
 				productCount	 = {$countIds},
 				productsPerPage = {$PPPage};
 		</script>
-		<script type="text/javascript" src="{$assets}jquery.pager.js"></script>
-		<script type="text/javascript" src="{$assets}filtersearch.js"></script>
 	{/if}
 	
 	<div class="filterSearchModule">

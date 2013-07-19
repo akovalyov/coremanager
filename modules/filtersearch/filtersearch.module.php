@@ -39,12 +39,13 @@ class FilterSearch extends ProCoreApi
     {
         $cookie = Context::getContext()->cookie;
         $smarty = Context::getContext()->smarty;
-
+        $this->context = Context::getContext();
         $this->name = 'filtersearch';
         $this->displayName = $this->l('Filter Search', $this->name);
         $this->lang = Language::getLanguage((int)$this->id_lang) ? : $this->id_lang = Configuration::get('PS_LANG_DEFAULT');
         $this->currency = (object)Tools::setCurrency($cookie);
         $this->inclTax = (bool)Configuration::get('PS_TAX');
+        $this->_path = __PS_BASE_URI__.'modules/coremanager/modules/'.$this->name.'/';
 
         parent::__construct($smarty);
         $this->productsInCategory($onAjax);
@@ -66,7 +67,11 @@ class FilterSearch extends ProCoreApi
     {
         return $this->display();
     }
+    function hookdisplayHeader($params){
+        $this->context->controller->addJS(($this->_path).'assets/filtersearch.js');
+        $this->context->controller->addJS(($this->_path).'assets/jquery.pager.js');
 
+    }
     function hookdisplayrightColumn($params)
     {
         return $this->hookleftColumn($params);

@@ -6,7 +6,7 @@
             <div class="left_block">
                 {if isset($comparator_max_item) && $comparator_max_item}
                     <p class="compare">
-                        <input type="checkbox" class="comparator" id="comparator_item_{$product.id_product}" value="comparator_item_{$product.id_product}" {if isset($compareProducts) && in_array($product.id_product, $compareProducts)}checked="checked"{/if} />
+                        <input type="checkbox" {literal} onclick="javascript:($(document).trigger('click', this))"{/literal} class="comparator" id="comparator_item_{$product.id_product}" value="comparator_item_{$product.id_product}" {if isset($compareProducts) && in_array($product.id_product, $compareProducts)}checked="checked"{/if} />
                         <label for="comparator_item_{$product.id_product}">{l s='Select to compare'}</label>
                     </p>
                 {/if}

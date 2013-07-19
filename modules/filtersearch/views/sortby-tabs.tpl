@@ -1,6 +1,6 @@
 <script type="text/javascript">
 {literal}
-	$$("#tabs").tabs();
+	$("#tabs").tabs();
 {/literal}
 </script>
 

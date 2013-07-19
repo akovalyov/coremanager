@@ -64,15 +64,13 @@ class CoreManager extends Module
 
     function hookdisplayHeader($params)
     {
-        global $protocol_link;
-//        echo 'called';
+
+        $this->context->controller->addJqueryUI('ui.tabs');
         $output = "";
         $output .= "<script type='text/javascript'>var psModulePath = '" . __PS_BASE_URI__ . "'</script>";
         $output .= "<script type='text/javascript'>function modulePath() {	return psModulePath + 'modules/coremanager/'; }</script>";
-        $output .= "<script type='text/javascript' src='" . $protocol_link . "ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>";
-        $output .= "<script type='text/javascript' src='" . $protocol_link . "ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>";
-        $output .= "<script type='text/javascript'> var $$ = jQuery.noConflict(true);</script>";
         $output .= $this->apiObj->loadModules(__FUNCTION__, $params);
+
         return $output;
     }
 
