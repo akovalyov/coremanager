@@ -1,0 +1,223 @@
+
+	/**
+	* filtersearch.css
+	* @author  	   Adam Lee & Yaakov Albietz - ejectcore.com
+	* @copyright   Copyright Eject Core 2009-2010. All rights reserved.
+	* @license 	   GPLv3 License http://www.gnu.org/licenses/gpl-3.0.html
+	* @credit   	3rd Party Development: Seth Benjamin
+	* @package     Filter Search Community Edition
+	* @version 	   v2.1 Final
+	*
+	*/
+	
+	/* top */
+	#tleft, #tcenter, #tright, #bleft, #bcenter, #bright { float:left; height:7px;}
+	#tleft, #tright, #bleft, #bright { width:10%; background-repeat:no-repeat;}
+	#tcenter,#bcenter { width:80%;}
+	
+	#tcenter { background:url(tcenter.png) repeat-x;}
+	#bcenter { background:url(bcenter.png) repeat-x;}
+	#tleft 	{ background:url(tleft.png);}
+	#tright { background:url(tright.png)  top right; float:right;}
+	#bleft 	{ background:url(bleft.png);}
+	#bright { background:url(bright.png) top right; float:right;}
+
+	.filterSearchModule form {
+		border: solid #ececec;
+		border-width:0 1px;
+		clear:both;
+		float:none;
+	}
+
+	.filterSearchModule h3 {
+		margin: 0;
+		font-size: 10px;
+		background:url(filter_h3.gif) top right;
+		height:32px;
+		font-weight:bold;
+		line-height:26px;
+		color:#000;
+		padding: 0 0 0 .9em;
+	}
+	
+	.filterSearchModule {
+		position: relative;
+	}
+	
+	.filterSearchModule ul {
+		list-style-type: none;
+		
+	}
+	
+	.filterSearchModule ul li {		
+		background:url(filter_li.gif) repeat-x;
+		height:22px;
+        padding: 3px 10px;
+	}
+		
+	.filterSearchModule ul li:hover {
+		background:url(filter_li_hover.gif) repeat-x;	
+	}
+	
+	.filterSearchModule ul li a{
+		font-size: 11px;
+		text-decoration:none;
+		color:#333;
+		line-height:11px;
+		
+	}
+
+	.filterSearchModule .filterViewAllFilters input{ border:none; background:none;}	
+	
+	.filterViewAllFilters input[type='image'] {
+		margin: 0;
+		border: none;
+	}	
+	
+	.filter_product_listing {
+		width: 100%;
+	}
+	
+	.filterAjaxLoader,
+	.filterAjaxLoaderAbs,
+	.filterAjaxLoaderAbsTop {
+		position: relative;
+		left: 50%;
+		height: 73px;
+		width: 80px;
+		margin-left: -25px;
+		background: url(ajaxIcon.gif) no-repeat center center;
+		clear: both;
+		z-index: 100
+	}
+	
+	.filterAjaxLoaderAbs {
+		position: absolute;
+		margin-top: -25px;		
+		top: 50%;
+	}
+	
+	.filterAjaxLoaderAbsTop {
+		background: url(ajaxload.gif) no-repeat center center;
+		position: absolute;
+		width: 160px;
+		left: 48%;
+		top: 20px;
+	}
+	
+	/* pagination */
+	
+	ul.pages {
+		display: block;
+		border: none;
+		text-transform: uppercase;
+		font-size: 10px;
+		margin: 10px 0 50px;
+		padding: 0;
+	}
+	
+	ul.pages li {
+		background: #FFF;
+		list-style: none;
+		float: left;
+		border: 1px solid #ccc;
+		text-decoration: none;
+		margin: 0 5px 0 0;
+		padding: 5px;
+		font-weight: bold;
+		color: #374853;
+	}
+	
+	ul.pages li:hover {
+		border: 1px solid #003f7e;
+	}
+	
+	ul.pages li.pgEmpty {
+		background: #FFF;
+		border: 1px solid #eee;
+		color: #eee;
+	}
+	
+	ul.pages li.pgCurrent {
+		background: #FFF;
+		border: 1px solid #003f7e;
+		color: #000;
+		font-weight: 700;
+		background-color: #eee; 
+	}
+	
+	/* overrides for ui-tab & ui-dialog styles */
+	
+	#tabs {
+		position: relative;
+		border: 0px solid #CCC;
+	/*	margin-top: 40px; */
+		clear: both;
+	}
+	
+	#tabs ul {
+		position: relative;
+		list-style: none;
+		background: none;
+		border: 0;
+		top: -6px;
+	}
+	
+	#tabs ul.ui-tabs-nav li {
+		height: inherit;
+		margin: 5px 1px 0 0;
+		background:#FFFFFF url(../../../assets/themes/base/images/ui-bg_glass_65_ffffff_1x400.png) repeat-x scroll 50% 50%;	
+	}
+	
+	#tabs ul.ui-tabs-nav li a:link,
+	#tabs ul.ui-tabs-nav li a:visited,
+	#tabs ul.ui-tabs-nav li a:hover,
+	#tabs ul.ui-tabs-nav li a:active {
+		background: #EEE;
+		font-size: 10px;
+		color: #666;
+	}
+	
+	#tabs ul.ui-tabs-nav li.ui-tabs-selected a:link,
+	#tabs ul.ui-tabs-nav li.ui-tabs-selected a:visited,
+	#tabs ul.ui-tabs-nav li.ui-tabs-selected a:hover,
+	#tabs ul.ui-tabs-nav li.ui-tabs-selected a:active {
+		font-weight: bold;
+		background: #FFF;
+		color: #374853;
+	}
+	
+	#tabs .ui-tabs-panel {
+		padding: 0;
+		font-size: 11px;
+		color: #000;
+	}
+	
+	#tabs .ui-tabs-panel:after {
+		content: ' ';
+		clear: both;
+		display: block;
+		height: 1px;
+		visibility: hidden;
+	}
+	
+	#tabs ul .filter_product_listing ul li {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#tabs .pagination { clear: both; }
+	
+	#tabs .pagination select { float: none; }
+	
+	ul#product_list {
+		display: none;
+	}	
+	
+	ul.product_list li.gallery {
+		clear: none;
+		float: left;
+		width:170px;
+		border: 0px;
+		background: none;
+	}

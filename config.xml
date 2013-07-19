@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <module>
+            <name>coremanager</name>
+            <displayName><![CDATA[Filter Search Community Edition]]></displayName>
+            <version><![CDATA[2.1]]></version>
+            <description><![CDATA[Including Pro Core API Module Framework v1.0]]></description>
+            <author><![CDATA[]]></author>
+            <tab><![CDATA[ejectcore.com]]></tab>
+            <is_configurable>1</is_configurable>
+            <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+        </module>
